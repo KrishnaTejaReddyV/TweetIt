@@ -1,0 +1,107 @@
+<template name="home">
+{{#if loggedin}}
+<br><br>
+<div class="container">
+<div class="row">
+	<div class="col s12">
+	<center><p class="flow-text" style="color:white"><b>{{uid}}</b></p></center>
+	<center><p style="color:white"><i class="tiny material-icons">perm_identity</i>&nbsp;Friends : {{friend_count}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="tiny material-icons">mode_edit</i> &nbsp;Posts : {{post_count}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="logout"><i class="tiny material-icons">power_settings_new</i>&nbsp; Logout</a></p></center>
+	</div>
+	<hr>
+    <div class="">
+      <ul class="tabs">
+        <li class="tab col s4"><a href="#test1">Tweet</a></li>
+        <li class="tab col s4"><a href="#test2">Wall</a></li>
+		<li class="tab col s4"><a href="#test3">Friends</a></li>
+      </ul>
+    </div>
+    
+	
+	<div id="test1" class="col s12">
+	
+		<!-- Modal Trigger -->
+		<br><br>
+		<a class=" center-align waves-effect waves-white btn-flat col s4 offset-s4 cyan white-text" href="#modal1" >Add a new post</a>
+		<br><br><br>
+	  <!-- Modal Structure -->
+	  <div id="modal1" class="modal">
+	 	<form class="add_post">
+		<div class="modal-content">
+		  <h4>Submit Your Post</h4>
+		  
+		  <div class="input-field col s12">
+          <input id="title" name="title" type="text">
+          <label for="title">Title</label>
+          </div>
+		  
+		  <div class="input-field col s12">
+		  <textarea id="message" name="message" class="materialize-textarea"></textarea>
+		  <label for="message">Message</label>
+		  </div>
+		  
+		</div>
+		<div class="modal-footer">
+		  <button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</button>
+		</div>
+	</form>
+	  </div>
+	  
+	  <script>
+	  $(document).ready(function(){
+		$('.modal').modal();
+		$('ul.tabs').tabs();
+	  });
+	  </script>
+	  
+	<div class="row" style="margin-top:2%">
+	 {{> utcard}} 
+	</div>
+	
+	</div>
+	
+	
+	<div id="test2" class="col s12">
+	<br>
+		<div class="row">
+			{{> ftcard}}
+		</div>
+	</div>
+	
+	
+	
+	<div id="test3" class="col s12">
+	
+	<div class="row">
+	<p class="flow-text" style="color:white;text-align:center">Add Friends</p>
+	</div>
+	
+	<div class="row">
+		<div class="col s10 offset-s1">
+			<form class="add_friend">
+				<div class="input-field" style="background-color:white">
+				  <input id="search" placeholder="SEARCH FRIENDS HERE" type="search" name="fsearch" required>
+				  <label class="label-icon" for="search"></label>
+				  <i class="material-icons">close</i>
+				</div>
+				
+				<button type="submit" class=" center-align modal-action modal-close waves-effect waves-white btn-flat col s2 offset-s5 cyan white-text">Add</button>
+				
+		  </form>
+	  </div>
+  </div>
+	  <div class="row">
+	<p class="flow-text" style="color:white;text-align:center">Friend List</p>
+	</div>
+	
+	{{> friend_list}}
+
+      
+	
+	</div>
+   
+  
+  </div>
+</div>
+ {{/if}}
+</template>
+ 

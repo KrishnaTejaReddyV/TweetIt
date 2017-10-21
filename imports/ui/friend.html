@@ -1,0 +1,26 @@
+<template name="friend_list">
+<ul class="collection col s10 offset-s1 white">
+	{{#each friends}}
+		<li class="collection-item avatar col s12"><br>
+		  <p class="flow-text">{{u_friend}} </p>
+		  <a href="#remove{{u_friend}}" class="secondary-content"><i class="material-icons right black-text">close</i></a>
+		</li>
+		<div id="remove{{u_friend}}" class="modal">
+			<div class="modal-content">
+				<form class="remfriend">
+				  <h5 align="center">Are you sure you want to remove {{u_friend}} as your friend?</h5>
+				  <hr><br>
+				  <button type="submit" name="remf" value="{{u_friend}}" class="center-align modal-action modal-close waves-effect waves-white btn-flat col s2 offset-s5 cyan white-text">Remove</button>
+				  <br><br>
+				</form>
+			</div>
+	  </div>
+	  
+	  	  <script>
+	  $(document).ready(function(){
+		$('.modal').modal();
+	  });
+	  </script>
+	{{/each}}
+</ul>
+</template>

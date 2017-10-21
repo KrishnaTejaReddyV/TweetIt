@@ -1,0 +1,30 @@
+<template name="utcard">
+	{{#each u_posts}}
+		<div class="col s10 offset-s1">
+		  <div class="card white">
+			<div class="card-content">
+			  <h5 align="center"><b>Title :</b> {{t_title}} <a href="#remove{{t_title}}"><i class="material-icons right black-text">close</i></a></h5>
+			  <hr>
+			  <p align="center">{{t_message}}</p>
+			</div>
+		  </div>
+		</div>
+		
+	  <div id="remove{{t_title}}" class="modal">
+		<div class="modal-content">
+		<form class="remtitle">
+		  <h5 align="center">Are you sure you want to remove tweet?</h5>
+		<hr><br>
+		  <button type="submit" name="rem" value="{{t_title}}" class="center-align modal-action modal-close waves-effect waves-white btn-flat col s2 offset-s5 cyan white-text">Remove</button>
+		  <br><br>
+		  </form>
+		</div>
+	  </div>
+	  
+	  	  <script>
+	  $(document).ready(function(){
+		$('.modal').modal();
+	  });
+	  </script>
+	{{/each}}
+</template>

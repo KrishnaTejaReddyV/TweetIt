@@ -1,0 +1,96 @@
+<template name="login">
+{{#if loggedout}}
+<div class="row">
+<p class="flow-text" style="color:white;text-align:center"><B>Tweet - It </B></p>
+</div>
+
+<div class="container">
+
+
+<div class="row">
+    <div>
+      <ul class="tabs">
+        <li class="tab col s6"><a href="#test1">Login</a></li>
+        <li class="tab col s6"><a href="#test2" >Register</a></li>
+      </ul>
+    </div>
+    
+	<script>
+	  $(document).ready(function(){
+		$('ul.tabs').tabs();
+	  });
+	  </script>
+	
+	<div id="test1" class="col s12">
+
+					 <div class="row">
+      <div class="col m6 offset-m3">
+        <div class="card-panel" style="margin-top:20%">
+         
+			<div class="row">
+    <form class="login col s12">
+      
+		<p class="red-text">{{lerror}}</p>
+        <div class="input-field col s12">
+          <input id="first_name" name="id" type="text" class="validate">
+          <label for="first_name">User Name</label>
+        </div>
+        
+        <div class="input-field col s12">
+          <input id="password" name="pwd" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+		
+     <div class="row">
+  <center><button type="submit" class="waves-effect waves-light btn"><i class="material-icons right">done</i>Login</button></center>
+  </div>
+    
+    </form>
+  </div>
+        </div>
+      </div>
+    </div>
+	
+	
+	</div>
+    
+	
+	<div id="test2" class="col s12">
+
+	 <div class="row">
+      <div class="col m6 offset-m3">
+        <div class="card-panel" style="margin-top:20%">
+         
+			<div class="row">
+    <form class="reg col s12">
+      
+        <div class="input-field col s12">
+          <input id="user_name" name="uname" type="text" class="validate">
+          <label for="user_name">Enter Unique User Name</label>
+        </div>
+		<p class="red-text">{{error}}</p>
+        <div class="input-field col s12">
+          <input id="password" name="pass" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+     
+    <div class="row">
+  <center><button type="submit" class="waves-effect waves-light btn"><i class="material-icons right">done</i>SUBMIT</button></center>
+  </div>
+    </form>
+  </div>
+  
+  
+		  
+		  
+		  
+        </div>
+      </div>
+    </div>
+	
+	</div>
+    
+  </div>
+</div>
+{{/if}}
+</template>
